@@ -158,7 +158,7 @@ class OAuth2
 
     /**
      * Used to define the name of the OAuth access token parameter
-     * (POST & GET). This is for the "bearer" token type.
+     * (POST & GET). This is for the "Bearer" token type.
      * Other token types may use different methods and names.
      *
      * IETF Draft section 2 specifies that it should be called "access_token"
@@ -256,7 +256,7 @@ class OAuth2
      *
      * @see http://tools.ietf.org/html/draft-ietf-oauth-v2-20#section-7.1
      */
-    const TOKEN_TYPE_BEARER = 'bearer';
+    const TOKEN_TYPE_BEARER = 'Bearer';
     const TOKEN_TYPE_MAC = 'mac'; // Currently unsupported
 
     /**
