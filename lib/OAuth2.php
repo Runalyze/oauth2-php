@@ -158,7 +158,7 @@ class OAuth2 implements IOAuth2
 
     /**
      * Used to define the name of the OAuth access token parameter
-     * (POST & GET). This is for the "bearer" token type.
+     * (POST & GET). This is for the "Bearer" token type.
      * Other token types may use different methods and names.
      *
      * IETF Draft section 2 specifies that it should be called "access_token"

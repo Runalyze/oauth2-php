@@ -215,7 +215,7 @@ class OAuth2Test extends PHPUnit_Framework_TestCase
         $response = $this->fixture->grantAccessToken($request);
 
         // Successful token grant will return a JSON encoded token WITHOUT a refresh token:
-        $this->assertRegExp('/^{"access_token":"[^"]+","expires_in":[^"]+,"token_type":"bearer","scope":null}$/', $response->getContent());
+        $this->assertRegExp('/^{"access_token":"[^"]+","expires_in":[^"]+,"token_type":"Bearer","scope":null}$/', $response->getContent());
     }
 
     /**
@@ -424,7 +424,7 @@ class OAuth2Test extends PHPUnit_Framework_TestCase
             array('date' => null)
         ));
 
-        $this->assertRegExp('{"access_token":"[^"]+","expires_in":3600,"token_type":"bearer","scope":null}', $response->getContent());
+        $this->assertRegExp('{"access_token":"[^"]+","expires_in":3600,"token_type":"Bearer","scope":null}', $response->getContent());
 
         $token = $stub->getLastAccessToken();
         $this->assertSame('cid', $token->getClientId());
@@ -489,7 +489,7 @@ class OAuth2Test extends PHPUnit_Framework_TestCase
             array('date' => null)
         ));
 
-        $this->assertRegExp('{"access_token":"[^"]+","expires_in":3600,"token_type":"bearer","scope":"scope1 scope2"}', $response->getContent());
+        $this->assertRegExp('{"access_token":"[^"]+","expires_in":3600,"token_type":"Bearer","scope":"scope1 scope2"}', $response->getContent());
 
         $token = $stub->getLastAccessToken();
         $this->assertSame('cid', $token->getClientId());
@@ -523,7 +523,7 @@ class OAuth2Test extends PHPUnit_Framework_TestCase
             array('date' => null)
         ));
 
-        $this->assertRegExp('{"access_token":"[^"]+","expires_in":3600,"token_type":"bearer","scope":"scope1"}', $response->getContent());
+        $this->assertRegExp('{"access_token":"[^"]+","expires_in":3600,"token_type":"Bearer","scope":"scope1"}', $response->getContent());
 
         $token = $stub->getLastAccessToken();
         $this->assertSame('cid', $token->getClientId());
@@ -556,7 +556,7 @@ class OAuth2Test extends PHPUnit_Framework_TestCase
             array('date' => null)
         ));
 
-        $this->assertRegExp('{"access_token":"[^"]+","expires_in":3600,"token_type":"bearer","scope":"scope1 scope2"}', $response->getContent());
+        $this->assertRegExp('{"access_token":"[^"]+","expires_in":3600,"token_type":"Bearer","scope":"scope1 scope2"}', $response->getContent());
 
         $token = $stub->getLastAccessToken();
         $this->assertSame('cid', $token->getClientId());
@@ -643,7 +643,7 @@ class OAuth2Test extends PHPUnit_Framework_TestCase
             array('date' => null)
         ));
 
-        $this->assertRegExp('{"access_token":"[^"]+","expires_in":3600,"token_type":"bearer"}', $response->getContent());
+        $this->assertRegExp('{"access_token":"[^"]+","expires_in":3600,"token_type":"Bearer"}', $response->getContent());
     }
 
     /**
@@ -679,7 +679,7 @@ class OAuth2Test extends PHPUnit_Framework_TestCase
             array('date' => null)
         ));
 
-        $this->assertRegExp('{"access_token":"[^"]+","expires_in":86400,"token_type":"bearer"}', $response->getContent());
+        $this->assertRegExp('{"access_token":"[^"]+","expires_in":86400,"token_type":"Bearer"}', $response->getContent());
     }
 
     /**
@@ -716,7 +716,7 @@ class OAuth2Test extends PHPUnit_Framework_TestCase
             array('date' => null)
         ));
 
-        $this->assertRegExp('{"access_token":"[^"]+","expires_in":3600,"token_type":"bearer","scope":null,"refresh_token":"[^"]+"}', $response->getContent());
+        $this->assertRegExp('{"access_token":"[^"]+","expires_in":3600,"token_type":"Bearer","scope":null,"refresh_token":"[^"]+"}', $response->getContent());
 
         $token = $stub->getLastAccessToken();
         $this->assertSame('cid', $token->getClientId());
